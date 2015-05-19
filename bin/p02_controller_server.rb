@@ -20,6 +20,7 @@ server = WEBrick::HTTPServer.new(Port: 3000)
 server.mount_proc('/') do |req, res|
   MyController.new(req, res).go
 end
+#server automatically sets them to WEBrick::HTTPRequest.new (and response)
 
 trap('INT') { server.shutdown }
 server.start
