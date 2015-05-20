@@ -1,0 +1,7 @@
+require 'active_support'
+require 'active_support/core_ext'
+require 'erb'
+require 'active_support/inflector'
+require_relative 'session.rb'
+require_relative 'params.rb'
+require_relative 'router.rb'
