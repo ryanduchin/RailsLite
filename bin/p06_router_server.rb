@@ -3,11 +3,6 @@ require_relative '../lib/phase6/controller_base'
 require_relative '../lib/phase6/router'
 
 
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPRequest.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPResponse.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/Cookie.html
-
 $cats = [
   { id: 1, name: "Curie" },
   { id: 2, name: "Markov" }

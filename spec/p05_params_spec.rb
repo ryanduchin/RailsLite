@@ -24,12 +24,14 @@ describe Phase5::Params do
     it "handles single key and value" do
       req.query_string = "key=val"
       params = Phase5::Params.new(req)
+      p params
       expect(params["key"]).to eq("val")
     end
 
     it "handles multiple keys and values" do
       req.query_string = "key=val&key2=val2"
       params = Phase5::Params.new(req)
+      p params
       expect(params["key"]).to eq("val")
       expect(params["key2"]).to eq("val2")
     end
