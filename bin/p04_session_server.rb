@@ -9,8 +9,15 @@ require_relative '../lib/phase4/controller_base'
 class MyController < Phase4::ControllerBase
   def go
     session["count"] ||= 0
+    #calls session method in controllerbase
+      #calls session initialize which gets the cookie
     session["count"] += 1
+      #changes the session cookie value
     render :counting_show
+      #calls our render method which renders the template
+      #end of render method calls render_content
+      # * this calls our Phase4::ControllerBase version which additionally
+      # =>calls store_session(@res) and adds the cookie value (to JSON) to cookies
   end
 end
 
