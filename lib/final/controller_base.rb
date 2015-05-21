@@ -8,6 +8,7 @@ class ControllerBase
     @req = req
     @res = res
     session
+    flash
     @params = Params.new(req, route_params)
   end
 
@@ -19,6 +20,10 @@ class ControllerBase
 
   def session
     @session ||= Session.new(@req)
+  end
+
+  def flash
+    @flash ||= Flash.new(@req)
   end
 
   def redirect_to(url)
@@ -33,7 +38,6 @@ class ControllerBase
   # pass the rendered html to render_content
   def render(template_name)
     controller_name = self.class.to_s.underscore
-      #benefit of having this in a module!! :)
 
     string = File.read("./views/#{controller_name}/#{template_name}.html.erb")
       #"./" for project root dir
